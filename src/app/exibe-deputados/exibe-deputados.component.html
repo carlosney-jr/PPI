@@ -1,0 +1,36 @@
+<form [formGroup]="mediaForm">
+  <p>
+    <label class="form-label" for="b1">Insira o ID do deputado </label>
+    <input
+      class="form-control"
+      type="string"
+      formControlName="id"
+    >
+    <p>
+      <input
+        id="btn"
+        type="button"
+        value="Calcular"
+        (click)="obterProposicoes()"
+        [disabled]="mediaForm.invalid"
+      />
+    </p>
+</form>
+
+<div *ngFor="let ementa of ementas">
+  <p> ID: {{ ementa.id }} </p>
+  <p> Sigla do Tipo de Ementa: {{ ementa.siglaTipo }}</p>
+  <p> Código do Tipo de Ementa: {{ ementa.codTipo }} </p>
+  <p> Número da Ementa: {{ ementa.numero }} </p>
+  <p> Ano da Ementa: {{ ementa.ano}} </p>
+  <p> Descrição da Ementa: {{ementa.ementa}} </p>
+  <!--
+  id: number = 0;
+   uri: string = '';
+   siglaTipo: string = '';
+   codTipo: number = 0;
+   numero: number = 0;
+   ano: number = 0;
+   ementa: string = '';
+  -->
+</div>
